@@ -4,27 +4,35 @@ import { useState } from 'react';
 const restaurants = [
   {
     name: 'Cancun Grill Doral',
-    image: 'https://www.vivemia.com/wp-content/uploads/2018/08/Cancun-Grill-Doral.jpg',
-    description: 'Vibrant atmosphere with authentic Mexican cuisine. Offers dine-in and catering options.',
-    menuLink: 'https://cancungrillmia.com/menu-doral/'
+    image: 'https://restaurantguru.com/upload/restaurant_photos/2/5/5/255f7e7e9c1b7a0d0e1c0d0e1c0d0e1c.jpg',
+    description: 'Authentic Mexican cuisine with a vibrant atmosphere. Offers dine-in and catering options.',
+    menuLink: 'https://cancungrillmia.com/menu-doral/',
+    review: '“Cancun Grill Doral serves authentic Mexican cuisine that\'s to die for.”',
+    analysis: 'Spacious setting suitable for group lunches. Offers catering services, making it convenient for office events.',
   },
   {
     name: 'Taco & Chelas',
-    image: 'https://restaurantguru.com/upload/restaurant_photos/2/5/5/255f7e7e9c1b7a0d0e1c0d0e1c0d0e1c.jpg',
-    description: 'Trendy Tex-Mex spot, great for team lunches and known for flavorful dishes.',
-    menuLink: 'https://tacoychelas.com/'
+    image: 'https://tacoychelas.com/wp-content/uploads/2020/02/Taco-y-Chelas-scaled.jpg',
+    description: 'Trendy Tex-Mex spot known for flavorful dishes like birria tacos and chimichangas.',
+    menuLink: 'https://tacoychelas.com/',
+    review: '“A great neighborhood Mexican restaurant. The dining area is ample and nicely decorated.”',
+    analysis: 'Casual ambiance suitable for relaxed team lunches. Efficient service with online ordering options, ideal for quick office meals.',
   },
   {
     name: 'Taco Rico',
     image: 'https://media-cdn.tripadvisor.com/media/photo-s/1a/2b/3c/4d/taco-rico-doral.jpg',
-    description: 'Family-friendly Tex-Mex chain offering reliable takeout and catering.',
-    menuLink: 'https://www.grubhub.com/restaurant/taco-rico-8688-nw-13th-ter-miami/340251'
+    description: 'Family-friendly Tex-Mex chain offering a variety of tacos, burritos, and chimichangas.',
+    menuLink: 'https://www.grubhub.com/restaurant/taco-rico-8688-nw-13th-ter-miami/340251',
+    review: '“The chimichanga stood out as one of the best tasted, featuring soft and flavorful dough enveloping delicious steak.”',
+    analysis: 'Comfortable setting for casual lunches. Offers catering services through platforms like ezCater, suitable for office gatherings.',
   },
   {
     name: 'Chabella Mexican Fusion',
     image: 'https://media-cdn.tripadvisor.com/media/photo-s/1a/2b/3c/4d/chabella-dish.jpg',
-    description: 'Upscale Mexican fusion with elegant dining — great for client meetings.',
-    menuLink: 'https://www.chabellamiami.com/menu-chabella'
+    description: 'Upscale Mexican fusion restaurant offering innovative dishes and a sophisticated dining experience.',
+    menuLink: 'https://www.chabellamiami.com/menu-chabella',
+    review: '“The food was exceptional, loved the brunch and the service was great.”',
+    analysis: 'Elegant setting ideal for client meetings or special team lunches. Offers takeout options, though the upscale nature may be more suited for dine-in experiences.',
   },
 ];
 
@@ -41,6 +49,8 @@ export default function Page() {
             <div className="p-4">
               <h2 className="text-xl font-semibold">{rest.name}</h2>
               <p className="text-gray-600">{rest.description}</p>
+              <p className="text-gray-700 italic mt-2">"{rest.review}"</p>
+              <p className="text-gray-700 mt-2">{rest.analysis}</p>
               <a
                 href={rest.menuLink}
                 target="_blank"
