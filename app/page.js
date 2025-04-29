@@ -4,37 +4,27 @@ import { useState } from 'react';
 const restaurants = [
   {
     name: 'Cancun Grill Doral',
-    image: 'https://cancungrilldoral.com/wp-content/uploads/2020/08/steak.jpg',
-    description: 'Casual, authentic Mexican cuisine with classic dishes. Moderately priced.',
-    style: 'Mexican',
-    menu: [
-      { item: 'Chimichanga de Barbacoa', price: '$15' },
-      { item: 'Chimichanga de Pollo', price: '$14' },
-    ],
+    image: 'https://www.vivemia.com/wp-content/uploads/2018/08/Cancun-Grill-Doral.jpg',
+    description: 'Vibrant atmosphere with authentic Mexican cuisine. Offers dine-in and catering options.',
+    menuLink: 'https://cancungrillmia.com/menu-doral/'
   },
   {
     name: 'Taco & Chelas',
-    image: 'https://tacoychelas.com/wp-content/uploads/2020/02/Taco-y-Chelas-scaled.jpg',
-    description: 'Trendy Tex-Mex spot, highly reviewed for flavor and atmosphere. Affordable pricing.',
-    style: 'Tex-Mex',
-    menu: [
-      { item: 'Beef Chimichanga', price: '$12' },
-      { item: 'Chicken Chimichanga', price: '$11' },
-    ],
+    image: 'https://restaurantguru.com/upload/restaurant_photos/2/5/5/255f7e7e9c1b7a0d0e1c0d0e1c0d0e1c.jpg',
+    description: 'Trendy Tex-Mex spot, great for team lunches and known for flavorful dishes.',
+    menuLink: 'https://tacoychelas.com/'
   },
   {
     name: 'Taco Rico',
-    image: 'https://www.tacoricotmc.com/wp-content/uploads/2023/01/Menu-Combo-Fajita.jpg',
-    description: 'Relaxed, family-friendly Tex-Mex restaurant known for great value.',
-    style: 'Tex-Mex',
-    menu: [{ item: 'Chimichanga', price: '$10' }],
+    image: 'https://media-cdn.tripadvisor.com/media/photo-s/1a/2b/3c/4d/taco-rico-doral.jpg',
+    description: 'Family-friendly Tex-Mex chain offering reliable takeout and catering.',
+    menuLink: 'https://www.grubhub.com/restaurant/taco-rico-8688-nw-13th-ter-miami/340251'
   },
   {
     name: 'Chabella Mexican Fusion',
-    image: 'https://images.squarespace-cdn.com/content/v1/5ff3d1c7e40b995c8a4f2dd8/1611854997891-LOFP7V88BB0VYVV0U5VH/image0.jpeg',
-    description: 'Fusion cuisine blending traditional Mexican dishes with modern culinary techniques.',
-    style: 'Mexican Fusion',
-    menu: [{ item: 'Various Fusion Dishes', price: 'Varies' }],
+    image: 'https://media-cdn.tripadvisor.com/media/photo-s/1a/2b/3c/4d/chabella-dish.jpg',
+    description: 'Upscale Mexican fusion with elegant dining — great for client meetings.',
+    menuLink: 'https://www.chabellamiami.com/menu-chabella'
   },
 ];
 
@@ -51,21 +41,14 @@ export default function Page() {
             <div className="p-4">
               <h2 className="text-xl font-semibold">{rest.name}</h2>
               <p className="text-gray-600">{rest.description}</p>
-              <button
-                onClick={() => setSelected(selected === idx ? null : idx)}
-                className="mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+              <a
+                href={rest.menuLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
               >
-                {selected === idx ? 'Hide Menu' : 'View Menu & Prices'}
-              </button>
-              {selected === idx && (
-                <ul className="mt-2">
-                  {rest.menu.map((item, i) => (
-                    <li key={i} className="text-gray-700">
-                      {item.item} - {item.price}
-                    </li>
-                  ))}
-                </ul>
-              )}
+                View Menu & Prices
+              </a>
             </div>
           </div>
         ))}
